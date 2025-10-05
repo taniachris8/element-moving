@@ -18,11 +18,11 @@ let character = "x";
 let row;
 let column;
 
-export function generateRandomNumber() {
+function generateRandomNumber() {
     return Math.floor(Math.random() * 4);
 }
 
-export function putCharacter() { 
+function putCharacter() { 
     row = generateRandomNumber();
     column = generateRandomNumber();
 
@@ -30,7 +30,7 @@ export function putCharacter() {
     renderBoard();
 }
 
-export function moveCharacter() {
+function moveCharacter() {
     let newRow = generateRandomNumber();
     let newColumn = generateRandomNumber();
 
@@ -44,7 +44,7 @@ export function moveCharacter() {
     renderBoard();
 }
 
-export function renderBoard() {
+function renderBoard() {
     const boardContainer = document.querySelector(".board");
     boardContainer.innerHTML = "";
 
@@ -53,7 +53,7 @@ export function renderBoard() {
             const cell = document.createElement("div");
             cell.classList.add("cell");
             cell.textContent = board[i][j];
-            boardContainer.appendChild(cell);
+            boardContainer.append(cell);
 
             if (cell.textContent === character) {
                 cell.textContent = "";
@@ -61,7 +61,7 @@ export function renderBoard() {
                 goblin.alt = "x";
                 goblin.classList.add("goblin");
                 goblin.src = goblinImage;
-                cell.appendChild(goblin);
+                cell.append(goblin);
             }
         }
     }
