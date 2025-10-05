@@ -18,11 +18,11 @@ let character = "x";
 let row;
 let column;
 
-function generateRandomNumber() {
+export function generateRandomNumber() {
     return Math.floor(Math.random() * 4);
 }
 
-function putCharacter() { 
+export function putCharacter() { 
     row = generateRandomNumber();
     column = generateRandomNumber();
 
@@ -30,7 +30,7 @@ function putCharacter() {
     renderBoard();
 }
 
-function moveCharacter() {
+export function moveCharacter() {
     let newRow = generateRandomNumber();
     let newColumn = generateRandomNumber();
 
@@ -40,11 +40,11 @@ function moveCharacter() {
         column = newColumn;
         board[row][column] = character;
     }
-    
+
     renderBoard();
 }
 
-function renderBoard() {
+export function renderBoard() {
     const boardContainer = document.querySelector(".board");
     boardContainer.innerHTML = "";
 
